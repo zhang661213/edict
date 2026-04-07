@@ -1,5 +1,7 @@
 <h1 align="center">⚔️ 三省六部 · Edict</h1>
 
+> ⚠️ 本项目基于 [cft0808/edict](https://github.com/cft0808/edict) 二次开发，感谢原作者 **cft0808** 及所有项目贡献者。
+
 <p align="center">
   <strong>我用 1300 年前的帝国制度，重新设计了 AI 多 Agent 协作架构。<br>结果发现，古人比现代 AI 框架更懂分权制衡。</strong>
 </p>
@@ -793,17 +795,3 @@ python3 scripts/skill_manager.py import-official-hub --agents zhongshu
 每个案例包含：完整旨意 → 中书省规划 → 门下省审核意见 → 各部执行结果 → 最终奏折。
 
 ---
-
-## ⭐ Star History
-
-如果这个项目让你会心一笑，请给个 Star ⚔️
-
-[![Star History Chart](https://api.star-history.com/svg?repos=cft0808/edict&type=Date)](https://star-history.com/#cft0808/edict&Date)
-
-
-
-<p align="center">
-  <strong>⚔️ 以古制御新技，以智慧驾驭 AI</strong><br>
-  <sub>Governing AI with the wisdom of ancient empires</sub><br><br>
-  <a href="#-朕的邸报公众号"><img src="https://img.shields.io/badge/公众号_cft0808-关注获取更新-07C160?style=for-the-badge&logo=wechat&logoColor=white" alt="WeChat"></a>
-</p>
