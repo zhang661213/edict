@@ -293,7 +293,10 @@ def sync_scripts_to_workspaces():
 
 
 def deploy_soul_files():
-    """将项目 agents/xxx/SOUL.md 部署到 ~/.openclaw/workspace-xxx/soul.md"""
+    """将项目 agents/xxx/SOUL.md 部署到 ~/.openclaw/workspace-xxx/soul.md
+    
+    部署前会替换 SOUL.md 中的占位符（__REPO_DIR__ → 实际项目路径）。
+    """
     agents_dir = BASE / 'agents'
     deployed = 0
     for proj_name, runtime_id in _SOUL_DEPLOY_MAP.items():
@@ -304,6 +307,8 @@ def deploy_soul_files():
         ws_dst.parent.mkdir(parents=True, exist_ok=True)
         # 只在内容不同时更新（避免不必要的写入）
         src_text = src.read_text(encoding='utf-8', errors='ignore')
+        # 替换占位符
+        src_text = src_text.replace('__REPO_DIR__', str(BASE))
         try:
             dst_text = ws_dst.read_text(encoding='utf-8', errors='ignore')
         except FileNotFoundError:

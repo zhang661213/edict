@@ -41,3 +41,4 @@ edict/frontend/node_modules/
 # Backups
 *.bak*
 data
+edict/frontend/dist/

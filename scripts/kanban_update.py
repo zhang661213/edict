@@ -405,7 +405,13 @@ def cmd_state(task_id, new_state, now_text=None):
 
 
 def cmd_flow(task_id, from_dept, to_dept, remark):
-    """添加流转记录（原子操作）"""
+    """添加流转记录（原子操作）
+    
+    flow to 字段语义：
+    - "to" 表示任务流转的目标部门/角色
+    - 执行后会自动更新任务的 org 字段为 to_dept
+    - 建议值：中书省、门下省、尚书省、礼部、户部、兵部、刑部、工部、吏部 等
+    """
     clean_remark = _sanitize_remark(remark)
     agent_id = _infer_agent_id_from_runtime()
     agent_label = _AGENT_LABELS.get(agent_id, agent_id)

@@ -24,13 +24,8 @@
   <img src="https://img.shields.io/badge/Python-3.9+-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python">
   <img src="https://img.shields.io/badge/Agents-12_Specialized-8B5CF6?style=flat-square" alt="Agents">
   <img src="https://img.shields.io/badge/Dashboard-Real--time-F59E0B?style=flat-square" alt="Dashboard">
-  <img src="https://img.shields.io/badge/License-MIT-22C55E?style=flat-square" alt="License">
-  <img src="https://img.shields.io/badge/Frontend-React_18-61DAFB?style=flat-square&logo=react&logoColor=white" alt="React">
+<img src="https://img.shields.io/badge/Frontend-React_18-61DAFB?style=flat-square&logo=react&logoColor=white" alt="React">
   <img src="https://img.shields.io/badge/Backend-stdlib_only-EC4899?style=flat-square" alt="Zero Backend Dependencies">
-</p>
-
-<p align="center">
-  <img src="https://img.shields.io/badge/公众号-cft0808-07C160?style=for-the-badge&logo=wechat&logoColor=white" alt="WeChat">
 </p>
 
 ---
@@ -805,35 +800,7 @@ python3 scripts/skill_manager.py import-official-hub --agents zhongshu
 
 [![Star History Chart](https://api.star-history.com/svg?repos=cft0808/edict&type=Date)](https://star-history.com/#cft0808/edict&Date)
 
----
 
-## 📮 朕的邸报——公众号
-
-> 古有邸报传天下政令，今有公众号聊 AI 架构。
-
-<p align="center">
-  <img src="docs/assets/wechat-qrcode.jpg" width="220" alt="公众号二维码 · cft0808">
-  <br><br>
-  <b>👆 扫码关注「cft0808」—— 朕的技术邸报</b>
-</p>
-
-你会看到：
-
-- 🏛️ **架构拆解** —— 三省六部到底怎么分权制衡的？12 个 Agent 各司何职？
-- 🔥 **踩坑复盘** —— Agent 吵架了怎么办？Token 烧光了怎么省？门下省为什么总封驳？
-- 🛠️ **Issue 修复实录** —— 每个 bug 都是一道奏折，看朕如何批红
-- 💡 **Token 省钱术** —— 用 1/10 的 token 跑出门下省审核效果的秘密
-- 🎭 **Agent 人设彩蛋** —— 六部的 SOUL.md 是怎么写出来的？
-
-> *"朕让 AI 上朝，结果 AI 比朕还卷。"* —— 关注后你会懂的。
-
----
-
-## 📄 License
-
-[MIT](LICENSE) · 由 [OpenClaw](https://openclaw.ai) 社区构建
-
----
 
 <p align="center">
   <strong>⚔️ 以古制御新技，以智慧驾驭 AI</strong><br>

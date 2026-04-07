@@ -4,8 +4,26 @@
     "ownerTitle": "皇上",
     "version": "v3"
   },
-  "states": ["Pending", "Taizi", "Zhongshu", "Menxia", "Assigned", "Next", "Doing", "Review", "Done", "Blocked", "Cancelled"],
+  "states": ["Pending", "Taizi", "Zhongshu", "Menxia", "Assigned", "Next", "Doing", "Review", "Done", "Blocked", "Cancelled", "PendingConfirm"],
   "stateFlow": "Pending → Taizi → Zhongshu → Menxia → Assigned → Doing → Review → Done",
+  "stateTransitions": {
+    "Pending":        ["Taizi", "Cancelled"],
+    "Taizi":          ["Zhongshu", "Cancelled"],
+    "Zhongshu":       ["Menxia", "Cancelled", "Blocked"],
+    "Menxia":         ["Assigned", "Zhongshu", "Cancelled"],
+    "Assigned":       ["Doing", "Next", "Blocked", "Cancelled"],
+    "Next":           ["Doing", "Blocked", "Cancelled"],
+    "Doing":          ["Review", "Done", "Blocked", "Cancelled"],
+    "Review":         ["Done", "Menxia", "Doing", "Cancelled", "PendingConfirm"],
+    "PendingConfirm": ["Done", "Review", "Cancelled"],
+    "Blocked":        ["Taizi", "Zhongshu", "Menxia", "Assigned", "Next", "Doing", "Review", "Cancelled"],
+    "Done":           [],
+    "Cancelled":      []
+  },
+  "negotiationRounds": {
+    "maxRounds": 3,
+    "description": "中书省与门下省之间的磋商最多3轮，第3轮强制通过"
+  },
   "terminalStates": ["Done", "Cancelled"],
   "roles": {
     "taizi": "太子",

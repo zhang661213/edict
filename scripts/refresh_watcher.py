@@ -95,5 +95,48 @@ def main():
         log.info(f'Refresh watcher stopped (total refreshes: {refresh_count})')
 
 
+def health_check():
+    """健康检查：验证 watcher 进程是否正常运转。
+    
+    检查项：
+    1. PID 文件存在且进程存活
+    2. 信号文件可写
+    3. 刷新脚本可执行
+    
+    返回: (ok: bool, message: str)
+    """
+    # 检查 PID 文件
+    if not PID_FILE.exists():
+        return False, "PID 文件不存在，watcher 未运行"
+    try:
+        pid = int(PID_FILE.read_text().strip())
+    except (ValueError, IOError):
+        return False, "PID 文件读取失败"
+    
+    # 检查进程存活
+    try:
+        os.kill(pid, 0)  # signal 0 只检测进程是否存在
+    except OSError:
+        return False, f"进程 {pid} 已不存在"
+    
+    # 检查信号文件可写
+    try:
+        SIGNAL_FILE.touch()
+        SIGNAL_FILE.unlink()
+    except OSError:
+        return False, "信号文件不可写"
+    
+    # 检查刷新脚本存在
+    if not REFRESH_SCRIPT.exists():
+        return False, "refresh_live_data.py 不存在"
+    
+    return True, f"Watcher 运行正常 (pid={pid})"
+
+
 if __name__ == '__main__':
-    main()
+    if '--health' in sys.argv:
+        ok, msg = health_check()
+        print(msg)
+        sys.exit(0 if ok else 1)
+    else:
+        main()
